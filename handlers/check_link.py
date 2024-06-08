@@ -10,7 +10,7 @@ class CheckLink(BaseHandler):
         print('check link')
         token = self.get_argument('token')
         try:
-            if os.path.exists(f'./used_token/{token}'):
+            if os.path.exists(f'./used_tokens/{token}'):
                 answer = {'result': 'true'}
             else:
                 answer = {'result': 'false'}
