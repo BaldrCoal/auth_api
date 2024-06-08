@@ -1,9 +1,11 @@
-from handlers.generate_key import GenerateKey
-from handlers.link_key import LinkKey
+from handlers.generate_token import GenerateToken
+from handlers.link_token import LinkToken
 from handlers.valid_check import ValidCheck
+from handlers.check_link import CheckLink
 
 urls = [
-    (r'/generate_key', GenerateKey,),
-    (r'/link_key', LinkKey,),
+    (r'/generate_token', GenerateToken,),
+    (r'/link_token', LinkToken,),
     (r'/valid_check', ValidCheck,),
+    (r'/check_link', CheckLink,),
 ]
