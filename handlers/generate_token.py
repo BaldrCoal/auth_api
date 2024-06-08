@@ -16,6 +16,8 @@ class GenerateToken(BaseHandler):
                 with open(f'./non_used_tokens/{token}/token.txt', 'w') as file:
                     file.write(token)
                 answer = {'result': f'{token}'}
+            else:
+                answer = {'result': '0783 1505'}
         except Exception as e:
             print(e)
             answer = {'result': f'{e}'}
