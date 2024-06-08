@@ -18,7 +18,7 @@ class LinkToken(BaseHandler):
                     file.write(token)
                 with open(f'./used_tokens/{token}/pc_id.txt', 'w') as file:
                     file.write(pc_id)
-                answer = {'result': 'success link'}
+                answer = {'result': 'true'}
                 print('success link')
             else:
                 answer = {'result': 'token not exist'}
