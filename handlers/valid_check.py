@@ -11,9 +11,9 @@ class ValidCheck(BaseHandler):
         pc_id = self.get_argument('pc_id')
         try:
             if os.path.exists(f'./data/{project_id}/pc_id.txt'):
-                with open(f'./data/{project_id}/pc_id.txt', 'w') as file:
+                with open(f'./data/{project_id}/pc_id.txt', 'r') as file:
                     local_pc_id = file.read()
-                with open(f'./data/{project_id}/project_id.txt', 'w') as file:
+                with open(f'./data/{project_id}/key.txt', 'r') as file:
                     local_project_id = file.read()
 
                 if pc_id == local_pc_id and project_id == local_project_id:

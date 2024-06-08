@@ -13,7 +13,7 @@ class LinkKey(BaseHandler):
         try:
             if os.path.exists(f'./data/{project_id}'):
                 with open(f'./data/{project_id}/pc_id.txt', 'w') as file:
-                    file.write(f'{pc_id}')
+                    file.write(pc_id)
             answer = {'result': 'success link'}
             print('success link')
         except Exception as e:

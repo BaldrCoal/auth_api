@@ -13,7 +13,7 @@ class GenerateKey(BaseHandler):
             os.mkdir(f'./data/{project_id}')
             with open(f'./data/{project_id}/key.txt', 'w') as file:
                 file.write(project_id)
-            answer = {'project_id': {project_id}}
+            answer = {'project_id': f'{project_id}'}
         except Exception as e:
             print(e)
             answer = {'error': f'{e}'}
