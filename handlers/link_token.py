@@ -1,6 +1,6 @@
 import os
 import uuid
-
+import shutil
 from handlers.base_handler import BaseHandler
 
 
@@ -13,7 +13,7 @@ class LinkToken(BaseHandler):
         try:
             if os.path.exists(f'./non_used_tokens/{token}'):
                 os.mkdir(f'./used_tokens/{token}')
-                os.rmdir(f'./non_used_tokens/{token}')
+                shutil.rmtree(f'./non_used_tokens/{token}')
                 with open(f'./used_tokens/{token}/token.txt', 'w') as file:
                     file.write(token)
                 with open(f'./used_tokens/{token}/pc_id.txt', 'w') as file:
