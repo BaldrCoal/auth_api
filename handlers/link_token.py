@@ -11,8 +11,12 @@ class LinkToken(BaseHandler):
         token = self.get_argument('token')
         pc_id = self.get_argument('pc_id')
         try:
-            if os.path.exists(f'./data/{token}'):
-                with open(f'./data/{token}/pc_id.txt', 'w') as file:
+            if os.path.exists(f'./non_used_tokens/{token}'):
+                os.mkdir(f'./used_tokens/{token}')
+                os.rmdir(f'./non_used_tokens/{token}')
+                with open(f'./used_tokens/{token}/token.txt', 'w') as file:
+                    file.write(token)
+                with open(f'./used_tokens/{token}/pc_id.txt', 'w') as file:
                     file.write(pc_id)
                 answer = {'result': 'success link'}
                 print('success link')

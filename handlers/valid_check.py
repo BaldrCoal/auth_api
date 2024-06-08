@@ -10,10 +10,10 @@ class ValidCheck(BaseHandler):
         token = self.get_argument('token')
         pc_id = self.get_argument('pc_id')
         try:
-            if os.path.exists(f'./data/{token}/pc_id.txt'):
-                with open(f'./data/{token}/pc_id.txt', 'r') as file:
+            if os.path.exists(f'./used_tokens/{token}'):
+                with open(f'./used_tokens/{token}/pc_id.txt', 'r') as file:
                     local_pc_id = file.read()
-                with open(f'./data/{token}/token.txt', 'r') as file:
+                with open(f'./used_tokens/{token}/token.txt', 'r') as file:
                     local_token = file.read()
 
                 if pc_id == local_pc_id and token == local_token:

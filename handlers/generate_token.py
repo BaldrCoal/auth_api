@@ -10,8 +10,8 @@ class GenerateToken(BaseHandler):
         print('generate token')
         token = str(uuid.uuid4())
         try:
-            os.mkdir(f'./data/{token}')
-            with open(f'./data/{token}/token.txt', 'w') as file:
+            os.mkdir(f'./non_used_tokens/{token}')
+            with open(f'./non_used_tokens/{token}/token.txt', 'w') as file:
                 file.write(token)
             answer = {'result': f'{token}'}
         except Exception as e:
